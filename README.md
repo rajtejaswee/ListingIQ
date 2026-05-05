@@ -1,72 +1,91 @@
-# ListingIQ
+# ListingIQ 🚀
 
-**"Your customers wrote the script. Your competitors set the bar. We close the gap."**
+ListingIQ is a high-performance **Competitive Intelligence Engine** designed for Amazon sellers and brand owners. It leverages AI to analyze competitor listings and customer reviews, identifying strategic gaps and generating high-converting marketing assets in seconds.
 
-ListingIQ is an AI-powered Amazon listing optimizer that analyzes your listing against competitors, identifies strategic gaps, and generates ready-to-film UGC (User-Generated Content) video scripts based on real customer reviews.
+## 🌟 Key Features
 
-## 🚀 Features
+- **Strategic Advantage Matrix:** Head-to-head comparison of market claims against your brand.
+- **Psychographic Market Segments:** Deep-dive analysis of customer sentiment and emotional drivers.
+- **Market-Closing Updates:** AI-optimized bullet points designed to neutralize competitor advantages.
+- **UGC Content Architect:** Data-backed storyboards and scripts for short-form video (TikTok/Reels).
 
-- **Competitor Gap Matrix:** See exactly what claims your competitors are making that you aren't.
-- **AI Bullet Rewrites:** Automatically update your listing bullets to close high-priority gaps.
-- **Voice of Customer Clustering:** Emotional analysis of your reviews to identify distinct customer personas.
-- **UGC Script Generator:** 5 custom video scripts targeting your specific customer segments and closing competitor gaps.
-- **Strategic Summary:** A senior consultant-level synthesis of your listing's biggest vulnerabilities and opportunities.
+## 🏗️ System Architecture
+
+The following diagram illustrates how ListingIQ operates on a broader level:
+
+```mermaid
+graph TD
+    A[User Input: Amazon URLs] --> B[Scraping Engine: Firecrawl]
+    B --> C[Market Context Data]
+    B --> D[Review Data Harvest]
+    
+    C --> E[Intelligence Cycle: LLM Analysis]
+    D --> E
+    
+    E --> F[Strategic Advantage Matrix]
+    E --> G[Psychographic Segments]
+    E --> H[Optimized Trajectory Copy]
+    E --> I[UGC Script Storyboards]
+    
+    F --> J[User Dashboard]
+    G --> J
+    H --> J
+    I --> J
+```
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
-- **UI Components:** shadcn/ui + Framer Motion
-- **Scraping:** [Firecrawl](https://firecrawl.dev) (Anti-bot + Markdown)
-- **AI Analysis:** [Google Gemini Flash](https://deepmind.google/technologies/gemini/)
-- **Deployment:** Vercel
+- **Frontend:** Next.js 15+, TypeScript, Tailwind CSS 4.0
+- **UI Components:** Radix UI (Base UI), Lucide Icons, Framer Motion
+- **AI Engine:** Groq SDK (Llama-3 models) 
+- **Data Acquisition:** Firecrawl API (Optimized for marketplace scraping)
 
-## 🏁 Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-You will need API keys for:
-1. **Firecrawl API** (Free tier available)
-2. **Gemini API**
+- Node.js 20+ 
+- Firecrawl API Key
+- Groq API Key (or Google AI Key)
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/your-username/listingiq.git
    cd listingiq
    ```
 
-2. Install dependencies:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. Set up environment variables:
-   Create a `.env.local` file in the root directory:
+3. **Environment Setup:**
+   Create a `.env.local` file in the root directory and add your keys:
    ```env
-   FIRECRAWL_API_KEY=your_firecrawl_key_here
-   GEMINI_API_KEY=your_gemini_key_here
+   FIRECRAWL_API_KEY=your_firecrawl_key
+   GROQ_API_KEY=your_groq_key
+   # Optional: NEXT_PUBLIC_...
    ```
 
-4. Run the development server:
+4. **Run Development Server:**
    ```bash
    npm run dev
    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📋 Operational Workflow
 
-## 📐 Architecture
+1. **Input:** Provide the URL of your Amazon listing and up to 3 major competitor URLs.
+2. **Scrape:** Firecrawl bypasses marketplace bot detection to extract product features and the latest 20 helpful reviews.
+3. **Analyze:** Our AI models map market assertions, identify feature vulnerabilities, and cluster customer personas.
+4. **Deploy:** Export optimized listing copy or download UGC storyboards to hand over to content creators.
 
-1. **Scrape Phase:** Parallel requests to Firecrawl for the user listing, up to 3 competitors, and the user's reviews.
-2. **Analysis Phase:** A 5-step orchestrated Gemini Flash pipeline:
-   - Extract claims from all listings.
-   - Cluster reviews into emotional personas.
-   - Build a gap report by comparing claims.
-   - Generate UGC scripts targeting clusters and gaps.
-   - Synthesize a final strategic insight.
-3. **Frontend:** A single-session state machine that guides the user from input to analysis to a rich dashboard.
+## 🛡️ Security
+
+- Secrets and environment variables are protected via `.gitignore`.
+- Analysis is performed in real-time; listing data is processed according to strict privacy protocols.
 
 ---
 
-Built for the Pixii Interview Challenge.
+*© 2026 ListingIQ Precision Analytics. Terminal Session Terminated.*
