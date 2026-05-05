@@ -19,7 +19,7 @@ export default function GapReportTab({ gapReport, originalBullets }: { gapReport
   return (
     <div className="space-y-24">
       <section className="space-y-8">
-        <Accordion type="single" collapsible>
+        <Accordion>
           <AccordionItem value="matrix" className="border-none">
             <AccordionTrigger className="hover:no-underline p-0 py-2 group/trigger [&>svg]:hidden">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-l-8 border-fire pl-8 text-left w-full group">

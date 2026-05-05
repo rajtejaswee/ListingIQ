@@ -57,7 +57,7 @@ GAP ADDRESSED: ${script.addressesGap}
         </div>
       </div>
 
-      <Accordion type="single" className="w-full space-y-6">
+      <Accordion className="w-full space-y-6">
         {(scripts.scripts || []).map((script, idx) => (
           <AccordionItem key={idx} value={`script-${idx}`} className="border-4 border-prussian bg-vanilla rounded-none shadow-[10px_10px_0px_0px_rgba(0,48,73,0.05)] overflow-hidden">
             <AccordionTrigger className="p-0 hover:no-underline group">
