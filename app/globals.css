@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-heading: var(--font-archivo), ui-sans-serif, system-ui;
+  --font-accent: var(--font-inter), ui-sans-serif, system-ui;
+  
+  --color-prussian: #003049;
+  --color-fire: #d62828;
+  --color-orange: #f77f00;
+  --color-maize: #fcbf49;
+  --color-vanilla: #eae2b7;
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --background: #eae2b7; /* Vanilla base */
+  --foreground: #003049; /* Prussian Blue text */
+  --card: #eae2b7;
+  --card-foreground: #003049;
+  --popover: #eae2b7;
+  --popover-foreground: #003049;
+  --primary: #d62828; /* Fire Engine Red */
+  --primary-foreground: #eae2b7;
+  --secondary: #f77f00; /* Orange */
+  --secondary-foreground: #eae2b7;
+  --muted: #00304910;
+  --muted-foreground: #00304960;
+  --accent: #fcbf49; /* Maize */
+  --accent-foreground: #003049;
+  --destructive: #d62828;
+  --border: #00304915;
+  --input: #00304908;
+  --ring: #f77f00;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .font-archivo {
+    font-family: var(--font-archivo);
+  }
+
+  /* Minimal depth without white */
+  .surface-depth {
+    box-shadow: 0 4px 12px -2px rgba(0, 48, 73, 0.08);
+  }
+  .surface-border {
+    border: 1px solid rgba(0, 48, 73, 0.1);
+  }
+}
